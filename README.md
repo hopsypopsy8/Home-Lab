@@ -23,7 +23,15 @@ You can find the link for the .iso files below. Note if on windows you will need
 #### Configuration 
 <img alt="image" src="https://github.com/user-attachments/assets/904781d7-a48c-46a0-8099-60872cd85520"/>
 
-### pfSense
+In the network section you can see 3 adapters, categorised as Paravirtualised Networks. To understand Paravirtualised we first must understand traditional network virtualisation (NV). NV seperates network services from physical hardware and allows virtual provision of an entire network. This allows for a programmable control to create, provision and manage networks while still relying on physical hardware for packet forwarding.  
+
+The most common example of network virtualisation is the virtual LAN (VLAN), which segments a physical LAN into multiple isolated virtual networks. VLANs allow devices to communicate as if they were on the same physical network, even when spread across different locations, improving security and traffic management.
+
+Paravirtualisation is a type of virtualisation where the guest operating system communicates with the hypervisor directly using special instructions called hypercalls (similair to system calls but designed for hypervisors specifically). This approach allows guest vms to interact with hardware more efficently without having direct access to the hosts kernel space. In this system all network activities in the paravirtualised network are handles through hypercalls allowing the hypervisor to manage packet transmission on the physical network. 
+
+This improves performance compared to full emulation while still maintaining a level of isolation between VMs and the host, **though the security boundaries depend on the hypervisor’s implementation and configuration**. 
+
+### Kali Linux
 You can find the link for the .iso files below. Note if on windows you will need 7z or some equivalent to unzip the file. 
 
 🔗 **Reference:** [Kali Linux .iso](https://www.kali.org/get-kali/#kali-installer-images) 
