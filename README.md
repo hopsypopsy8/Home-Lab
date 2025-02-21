@@ -7,13 +7,18 @@ I would like to deepen my understanding of networking, security and system admin
 
 I went with a super basic initial topology since i've never done something like this and simple = better. I'm pretty sure that expanding this setup should be *easier* (especially since this is all vm hosted at the moment) however i am looking at buying a raspberry pi and configuring old computers to help with sharing load and just add additional end hosts which are not all essentially running on my one laptops hardware (fan jetplane noises).
 
+### Virtual Machines
+Virtual Machines (VMs) are isolated computing environments that function as independent systems, each with their own dedicated CPU, memory, network interface, and storage. A hypervisor (virtualization software) manages the allocation of these resources, ensuring isolation and efficient performance.
+
+The device running these VMs (in my case, a laptop) is called the host, while the VMs are guests. The hypervisor dynamically distributes resources from the host to the guests and allows for flexible reallocation when needed. VMs enable multiple operating systems to run on a single machine, it's a similar experience to running them on dedicated hardware, however with fewer resources, which can sometimes be frustrating. 
+
+A key benefit is when no VMs are running all resources are reallocated back to the host machine (excluding disk space). 
+
 ## Device Setup
 ### pfSense
 You can find the link for the .iso files below. Note if on windows you will need 7z or some equivalent to unzip the file. 
 
 🔗 **Reference:** [pfSense .iso](https://atxfiles.netgate.com/mirror/downloads/) 
-
-I've shared 
 
 #### Configuration 
 <img alt="image" src="https://github.com/user-attachments/assets/904781d7-a48c-46a0-8099-60872cd85520"/>
