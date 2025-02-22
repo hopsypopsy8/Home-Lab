@@ -31,6 +31,8 @@ Paravirtualisation is a type of virtualisation where the guest operating system 
 
 This improves performance compared to full emulation while still maintaining a level of isolation between VMs and the host, **though the security boundaries depend on the hypervisor’s implementation and configuration**. 
 
+The actual configuration of pfSense is ongoing and since there currently are *no connections or managers there is nothing to add here*.
+
 ### Kali Linux
 You can find the link for the .iso files below. Note if on windows you will need 7z or some equivalent to unzip the file. 
 
@@ -39,6 +41,29 @@ You can find the link for the .iso files below. Note if on windows you will need
 #### Configuration 
 <img alt="image" src="https://github.com/user-attachments/assets/bfec9081-2dcc-4cb0-aee4-1e0782b11032"/>
 
+This Kali machine, although named "VictimLinux", will be used for managing the pfSense firewall. Once the image is booted up and installed, you can navigate to 10.0.0.1 (the assigned IP of pfSense) to configure firewall rules.
 
-still to do **a lot**
+After setting up the system, we need to:
+
+1. Name our interfaces
+2. Set the DNS resolver
+3. Configure networking settings
+
+Once these configurations are complete, we can proceed to firewall rules.
+
+#### Firewall Configuration: Handling RFC1918
+One important rule is the proper handling of RFC1918 addresses, which are private network blocks:
+
+10.0.0.0/8
+
+172.16.0.0/12
+
+192.168.0.0/16
+
+We will create an alias for these addresses and also include additional special-use networks:
+
+Link-Local Address Space → 169.254.0.0/16
+
+Loopback Address Space → 127.0.0.0/8
+
 **talk about paravirtualized networks, internal network so all traffic goes thru pfSense (duh), what is WAN, setting up kali, using kali to**
