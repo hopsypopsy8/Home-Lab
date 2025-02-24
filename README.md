@@ -52,18 +52,21 @@ After setting up the system, we need to:
 Once these configurations are complete, we can proceed to firewall rules.
 
 #### Firewall Configuration: Handling RFC1918
-One important rule is the proper handling of RFC1918 addresses, which are private network blocks:
+Proper handling of RFC1918 addresses, we must ensure that we block all private networks.
 
-10.0.0.0/8
-
-172.16.0.0/12
-
-192.168.0.0/16
+10.0.0.0/8 : 172.16.0.0/12 : 192.168.0.0/16
 
 We will create an alias for these addresses and also include additional special-use networks:
 
-Link-Local Address Space → 169.254.0.0/16
+Link-Local Address Space : 169.254.0.0/16 
 
-Loopback Address Space → 127.0.0.0/8
+Loopback Address Space : 127.0.0.0/8
 
-**talk about paravirtualized networks, internal network so all traffic goes thru pfSense (duh), what is WAN, setting up kali, using kali to**
+This is to protect against devices assigning themselves ips in this range when they cannot obtain one from DHCP. Blocking this range prevents unwanted traffic from devices that are unable to properly join the network. 
+
+### Topology v1.1
+<img alt="image" src="https://github.com/user-attachments/assets/39da9938-4716-42bf-bf5d-14bef64f9907" />
+
+This topology adds a new guest into the system, metaspoitable2. The guest will be hosted on LAN 1 unlike the already configured kali linux on LAN 0. 
+
+
