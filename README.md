@@ -1,6 +1,6 @@
 # Home-Lab
 ### Intention
-I would like to deepen my understanding of networking, security and system administration by working hands-on since cough uni didn't do that. Currently v1.0 will develop practical skills in firewall management, routing, server configuration. Obvious expansions will be adding in a SIEM and then similuating attacks on the system ("testing") 
+I would like to deepen my understanding of networking, firewalls, SIEM tools, security and system administration by working hands-on since uni left out a lot of practical content. Currently v1.0 will develop practical skills in firewall management, routing, server configuration. Obvious expansions will be adding in splunk as the SIEM and then similuating attacks on the system for security testing
 
 ### Topology v1.0
 <img alt="image" src="https://github.com/user-attachments/assets/07ce89a7-71f3-41a2-b17b-4e6d25410171"/>
