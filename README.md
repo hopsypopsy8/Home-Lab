@@ -1,8 +1,13 @@
 # Home-Lab
+### Table of Contents
+- [Topology v1.0](#top-v10)
+- [Topology v1.1](#top-v11)
+
 ### Intention
 I would like to deepen my understanding of networking, firewalls, SIEM tools, security and system administration by working hands-on since uni left out a lot of practical content. Currently v1.0 will develop practical skills in firewall management, routing, server configuration. Obvious expansions will be adding in splunk as the SIEM and then similuating attacks on the system for security testing
 
-### Topology v1.0
+<a id="top-v10"></a>
+## Topology v1.0
 <img alt="image" src="https://github.com/user-attachments/assets/07ce89a7-71f3-41a2-b17b-4e6d25410171"/>
 
 I went with a super basic initial topology since i've never done something like this and simple = better. I'm pretty sure that expanding this setup should be *easier* (especially since this is all vm hosted at the moment) however i am looking at buying a raspberry pi and configuring old computers to help with sharing load and just add additional end hosts which are not all essentially running on my one laptops hardware (fan jetplane noises).
@@ -60,8 +65,8 @@ This is to protect against devices assigning themselves ips in this range when t
 
 We've also allowed access to the internet via PORT 443 and 80 HTTPS/HTTP. To ensure correct domain name resolution we've also unblocked PORT 53 for DNS.
 
-
-### Topology v1.1
+<a id="top-v11"></a>
+## Topology v1.1
 <img alt="image" src="https://github.com/user-attachments/assets/2b169f7c-c125-4e4b-9e51-1dbaf7638d86" />
 
 
