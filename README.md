@@ -43,15 +43,9 @@ You can find the link for the .iso files below. Note if on windows you will need
 
 This Kali machine, although named "VictimLinux", will be used for managing the pfSense firewall. Once the image is booted up and installed, you can navigate to 10.0.0.1 (the assigned IP of pfSense) to configure firewall rules.
 
-After setting up the system, we need to:
+#### Firewall Configuration:
+<img alt="image" src="https://github.com/user-attachments/assets/b1de165d-7811-4f11-b9b1-0dab8cb2adec" />
 
-1. Name our interfaces
-2. Set the DNS resolver
-3. Configure networking settings
-
-Once these configurations are complete, we can proceed to firewall rules.
-
-#### Firewall Configuration: Handling RFC1918
 Proper handling of RFC1918 addresses, we must ensure that we block all private networks.
 
 10.0.0.0/8 : 172.16.0.0/12 : 192.168.0.0/16
@@ -64,9 +58,15 @@ Loopback Address Space : 127.0.0.0/8
 
 This is to protect against devices assigning themselves ips in this range when they cannot obtain one from DHCP. Blocking this range prevents unwanted traffic from devices that are unable to properly join the network. 
 
-### Topology v1.1
-<img alt="image" src="https://github.com/user-attachments/assets/39da9938-4716-42bf-bf5d-14bef64f9907" />
+We've also allowed access to the internet via PORT 443 and 80 HTTPS/HTTP. To ensure correct domain name resolution we've also unblocked PORT 53 for DNS.
 
-This topology adds a new guest into the system, metaspoitable2. The guest will be hosted on LAN 1 unlike the already configured kali linux on LAN 0. 
+
+### Topology v1.1
+<img alt="image" src="https://github.com/user-attachments/assets/2b169f7c-c125-4e4b-9e51-1dbaf7638d86" />
+
+
+This topology adds a new guest into the system, metaspoitable2. The guest will be hosted on LAN 1 unlike the already configured kali linux on LAN 0. It also adds SIEM and SIEM forwarder (which is just a user but has the forwarder running so info is sent). 
+
+The SIEM installed is Splunk, to see more in-regards to that please view [SIEM Lab](https://github.com/hopsypopsy8/Detection-and-Mitigation-Lab/tree/main).
 
 
